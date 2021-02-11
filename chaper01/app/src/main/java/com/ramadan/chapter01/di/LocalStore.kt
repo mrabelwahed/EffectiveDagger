@@ -1,4 +1,6 @@
 package com.ramadan.chapter01.di
 
-class LocalStore (val token : String) {
+import com.ramadan.chapter01.abstractions.CacheSource
+
+class LocalStore (val token : String)  : CacheSource{
 }
