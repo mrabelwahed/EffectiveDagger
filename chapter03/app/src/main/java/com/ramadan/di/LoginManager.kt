@@ -2,17 +2,14 @@ package com.ramadan.di
 
 import android.util.Log
 import com.ramadan.abstractions.CacheSource
+import javax.inject.Inject
 
-//Bad Approach
 
-//class LoginManager (username:String, password:String, token :String){
-//    val localStore  = LocalStore(token)
-//    val apiService = ApiService(username , password)
-//}
+class LoginManager @Inject constructor (private val localStore: LocalStore , private val apiService: ApiService){
 
-//Good Design
-class LoginManager (val localStore: CacheSource, val apiService: ApiService){
-    fun print(){
-        Log.d("LoginManager" , "hello, ramadan")
+    fun login(username : String , pass:String){
+        Log.d("LoginManager","login($username , $pass)")
+        val token = apiService.authenticate(username,pass)
+        localStore.saveToken(token)
     }
 }

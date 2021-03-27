@@ -1,7 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
+
 
 android {
     compileSdkVersion 30
@@ -42,4 +44,8 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    // pure dagger
+     implementation 'com.google.dagger:dagger:2.23'
+     kapt 'com.google.dagger:dagger-compiler:2.23'
+
 }

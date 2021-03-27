@@ -1,6 +1,11 @@
 package com.ramadan.di
 
+import android.util.Log
 import com.ramadan.abstractions.CacheSource
+import javax.inject.Inject
 
-class LocalStore (val token : String)  : CacheSource{
+class LocalStore @Inject constructor():CacheSource {
+    fun saveToken(token :String){
+        Log.d("LocalStore","saveToken($token)")
+    }
 }
