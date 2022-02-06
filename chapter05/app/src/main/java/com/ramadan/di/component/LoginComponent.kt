@@ -1,10 +1,10 @@
 package com.ramadan.di.component
 import com.ramadan.MainActivity
-import com.ramadan.di.LoginManager
-import com.ramadan.di.module.CacheModule
+import com.ramadan.di.module.LocalStoreModule
+import com.ramadan.di.module.LoginServiceModule
 import dagger.Component
 
-@Component(modules = [CacheModule::class])
+@Component(modules = [LocalStoreModule::class , LoginServiceModule::class])
 interface LoginComponent {
     fun inject(activity:MainActivity)
 }

@@ -4,7 +4,7 @@ import android.util.Log
 import com.ramadan.abstractions.CacheSource
 import javax.inject.Inject
 
-class LocalStore @Inject constructor():CacheSource {
+class LocalStore  {
     fun saveToken(token :String){
         Log.d("LocalStore","saveToken($token)")
     }
