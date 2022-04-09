@@ -5,7 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.ramadan.chapter01.R
 import com.ramadan.di.Config
 import com.ramadan.di.LoginManager
-import com.ramadan.di.component.DaggerLoginComponent
+import com.ramadan.di.component.DaggerAppComponent
+import com.ramadan.di.module.LocalStoreModule
 import javax.inject.Inject
 
 
@@ -16,8 +17,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         // using dagger component
-        val loginComponent = DaggerLoginComponent.create()
-         loginComponent.inject(this)
+       DaggerAppComponent
+            .create()
+            .getLoginComponent()
+            .inject(this)
+
         loginManager.login("ramadan","12222")
         loginManager.enableCache(config)
     }
