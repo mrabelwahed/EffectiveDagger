@@ -6,13 +6,13 @@ plugins {
 
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion "30.0.2"
 
     defaultConfig {
         applicationId "com.ramadan.chapter01"
         minSdkVersion 16
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
@@ -47,5 +47,7 @@ dependencies {
     // pure dagger
      implementation 'com.google.dagger:dagger:2.37'
      kapt 'com.google.dagger:dagger-compiler:2.37'
-
+    def lifecycle_version = "2.4.1"
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
 }
